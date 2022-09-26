@@ -23,7 +23,7 @@ namespace Library.Models
             }
         }
 
-    public Customer Add(Customer newEntity)
+        public Customer Add(Customer newEntity)
         {
             var customerToAdd = _appDbContext.Customers.Add(newEntity);
             _appDbContext.SaveChanges();

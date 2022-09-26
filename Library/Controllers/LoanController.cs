@@ -27,8 +27,30 @@ namespace Library.Controllers
         public IActionResult Create(Loan loan)
         {
             _loanRepository.AddLoan(loan);
-            return RedirectToAction("List");
+            return RedirectToAction("Index", "Home");
+        }
 
+        //GET
+        public IActionResult Edit(int id)
+        {
+            var loanToReturn = _loanRepository.GetSingle(id);
+            if (loanToReturn == null)
+            {
+                return NotFound();
+            }
+            return View(loanToReturn);
+        }
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Loan loan)
+        {
+            if (ModelState.IsValid)
+            {
+                _loanRepository.ReturnBook(loan);
+                return RedirectToAction("Index", "Home");
+            }
+            return View(loan);
         }
     }
 }

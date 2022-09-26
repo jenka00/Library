@@ -9,12 +9,13 @@ namespace Library.ViewModels
 {
     public class LoanViewModel
     {        
-        public Customer customer { get; set; }
-        public IEnumerable<Book> BookList { get; set; }
+        public Customer Customer { get; set; }
+        public Book Book { get; set; }
+        public IEnumerable<Loan> LoanList { get; set; }
         
         [DataType(DataType.Date)]
-        [Display(Name = "Lånedatum")]
+        [Display(Name = "Återlämningsdatum")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
-        public DateTime loanDate { get; set; }
+        public DateTime ReturnDate { get; set; }
     }
 }

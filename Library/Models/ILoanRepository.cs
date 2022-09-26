@@ -7,6 +7,7 @@ namespace Library.Models
 {
     public interface ILoanRepository
     {
+        Loan GetSingle(int id);
         Loan AddLoan(Loan loan);
         Loan ReturnBook(Loan loan);        
     }

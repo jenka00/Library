@@ -9,7 +9,7 @@
             <h3 class="text-secondary float-right">@Model.CustomerFirstName @Model.CustomerLastName</h3>
         </div>
     </div>
-
+    @if(Model.Loans.Count > 0) { 
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
@@ -44,8 +44,8 @@
                         {
                             <td>
                                 <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" disabled class="form-check-input" checked="checked">Återlämnad
+                                    <label class="form-check-label"><i class="fa-regular fa-square-check text-success"></i>
+                                        Ja
                                     </label>
                                 </div>
                             </td>
@@ -54,16 +54,23 @@
                         {
                             <td>
                                 <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" disabled class="form-check-input">Återlämnad
+                                    <label class="form-check-label"><i class="fa-regular fa-square text-danger"></i>
+                                        Nej
                                     </label>
                                 </div>
                             </td>
-
+                            <td>
+                                <a class="btn btn-warning" asp-controller="Loan" asp-action="Edit" asp-route-id="@loan.LoanId">Återlämna</a>
+                            </td>
                         }
                     </tr>
                 }
             </tbody>
         </table>
+    }
+            else
+            {
+                <div class="pb-3">Du har inte gjort några lån.</div>
+            }
         <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
     </div>

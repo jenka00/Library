@@ -1,0 +1,30 @@
+﻿@model Loan
+
+<div class="container p3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Uppdatera låntagare</h2>
+        </div>
+    </div>
+    <form method="post" asp-action="Edit" autocomplete="off">
+        <input asp-for="LoanId" hidden />
+        <input asp-for="CustomerId" hidden />
+        <input asp-for="BookId" hidden />
+        <input asp-for="Book" hidden />
+        <div class="border p-3 mt4">
+            <div class="mb-3">
+                <label asp-for="Book.BookTitle" class="form-label font-weight-bold"></label>
+                <input asp-for="Book.BookTitle" disabled class="form-control">                
+            </div>
+            <div class="mb-3">
+                <label asp-for="DateForLoan" class="form-label font-weight-bold"></label>
+                <input asp-for="DateForLoan" disabled class="form-control">                
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:150px">Avsluta lån</button>
+            <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
+        </div>
+    </form>
+</div>
+
+
+

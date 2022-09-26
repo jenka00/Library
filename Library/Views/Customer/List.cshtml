@@ -6,7 +6,7 @@
             <h2 class="text-primary">Låntagare</h2>
         </div>
         <div class="col-6">
-            <a asp-controller="Customer" asp-action="Create" class=" btn btn-success float-right">Skapa ny låntagare</a>
+            <a asp-controller="Customer" asp-action="Create" class=" btn btn-success float-right"><i class="fa-solid fa-circle-plus"></i>&nbsp; Skapa ny låntagare</a>
         </div>
     </div>
 
@@ -26,15 +26,15 @@
             {
                 <tr>
                     <td>
-                        <a class="text-center" asp-controller="Customer" asp-route-id=@customer.CustomerId asp-action="Details">@customer.CustomerFirstName @customer.CustomerLastName</a>
+                        <div class="text-left">@customer.CustomerFirstName @customer.CustomerLastName</div>
                     </td>
                     <td>
                         <div class="text-left">@customer.PhoneNumber</div>
                     </td>
                     <td>
-                        <a class="btn btn-warning" asp-controller="Customer" asp-action="Edit" asp-route-id="@customer.CustomerId">Uppdatera</a>
-                        <a class="btn btn-danger" asp-controller="Customer" asp-action="Remove" asp-route-id="@customer.CustomerId">Ta bort</a>
-                        <a class="btn btn-info" asp-controller="Customer" asp-action="Details" asp-route-id="@customer.CustomerId">Se lån</a>  
+                        <a class="btn btn-warning" asp-controller="Customer" asp-action="Edit" asp-route-id="@customer.CustomerId"><i class="fa-regular fa-pen-to-square"></i> Uppdatera</a>
+                        <a class="btn btn-danger" asp-controller="Customer" asp-action="Remove" asp-route-id="@customer.CustomerId"><i class="fa-solid fa-trash-can"></i> Ta bort</a>
+                        <a class="btn btn-info" asp-controller="Customer" asp-action="Details" asp-route-id="@customer.CustomerId"><i class="fa-solid fa-book"></i> Se lån</a>  
                     </td>
                 </tr>
              }

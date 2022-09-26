@@ -1,29 +1,32 @@
 ﻿@model Customer
 
-<form method="post">
-    <div class="border p-3 mt4">
-        <div class="row pb-2">
-            <h2 class="text-primary">Skapa låntagare</h2>
-            @*<hr/>*@
+    <div class="container p3">
+        <div class="row pt-4">
+            <div class="col-6">
+                <h2 class="text-primary">Skapa ny låntagare</h2>
+            </div>
         </div>
-        <div class="mb-3">
-            <label asp-for="CustomerFirstName"></label>
-            <input asp-for="CustomerFirstName" class="form-control">
-            <span asp-validation-for="CustomerFirstName" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="CustomerLastName"></label>
-            <input asp-for="CustomerLastName" class="form-control">
-            <span asp-validation-for="CustomerLastName" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="PhoneNumber"></label>
-            <input asp-for="PhoneNumber" class="form-control">
-            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:150px">Skapa</button>
-        <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
+        <form method="post" autocomplete="off">
+            <div class="border p-3 mt4">
+                <div class="mb-3">
+                    <label asp-for="CustomerFirstName" class="form-label font-weight-bold"></label>
+                    <input asp-for="CustomerFirstName" class="form-control">
+                    <span asp-validation-for="CustomerFirstName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="CustomerLastName" class="form-label font-weight-bold"></label>
+                    <input asp-for="CustomerLastName" class="form-control">
+                    <span asp-validation-for="CustomerLastName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PhoneNumber" class="form-label font-weight-bold"></label>
+                    <input asp-for="PhoneNumber" class="form-control">
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:150px">Skapa</button>
+                <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
+            </div>
+        </form>
     </div>
-</form>
 
 

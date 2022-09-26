@@ -3,12 +3,9 @@
 }
 <div class="containter p-3">
     <div class="text-center">
-        <h1 class="display-4">Välkommen till Biblioteket</h1>
-        <div class="text-center">
-            <a asp-controller="Book" asp-action="List" class=" btn btn-success float-right">Se alla böcker</a>
-        </div>
-        <div class="text-center">
-            <a asp-controller="Loan" asp-action="Create" class="btn btn-success float-left">Låna en bok</a>
-        </div>
+        <h1 class="display-4 p-3">Välkommen till Biblioteket</h1>
+        <a asp-controller="Book" asp-action="List" class=" btn btn-primary">Se alla böcker</a>
+        <a asp-controller="Loan" asp-action="Create" class="btn btn-primary">Låna en bok</a>
+            <img src="~/Images/books.jpg" class="img-fluid pt-3" alt="Responsive image">
     </div>
 </div>

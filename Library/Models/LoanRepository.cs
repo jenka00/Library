@@ -14,6 +14,10 @@ namespace Library.Models
         {
             _appDbContext = appDbContext;
         }
+        public Loan GetSingle(int id)
+        {
+            return _appDbContext.Loans.Include(b => b.Book).FirstOrDefault(l => l.LoanId == id);
+        }
         public Loan AddLoan(Loan loan)
         {
             loan.DateForLoan = DateTime.Now;
@@ -23,7 +27,14 @@ namespace Library.Models
         }
         public Loan ReturnBook(Loan loan)
         {
-            throw new NotImplementedException();
+            var loanReturnBook = _appDbContext.Loans.FirstOrDefault(l => l.LoanId == loan.LoanId);
+            if(loanReturnBook != null)
+            {
+                loanReturnBook.DateForReturn = DateTime.Now;
+                _appDbContext.SaveChanges();
+                return loanReturnBook;
+            }
+            return null;
         }
     }
 }
