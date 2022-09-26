@@ -1,0 +1,24 @@
+﻿@*@model Loan
+
+<h1>Låna</h1>
+<form method="post">
+    <div class="border p-3 mt4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Låna en bok</h2>
+        </div>
+        <div class="mb-3">
+            <label asp-for=CustomerId></label>
+            <input asp-for="CustomerId" class="form-control">
+            <span asp-validation-for="CustomerId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="BookId"></label>
+            <input asp-for="BookId" class="form-control">
+            <span asp-validation-for="BookId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Ta bort</button>
+        <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
+    </div>
+</form>*@
+
+

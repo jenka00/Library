@@ -1,0 +1,40 @@
+﻿@model Loan
+
+<form method="post" asp-action="Create">    
+    <input asp-for="DateForLoan" hidden />
+    <div class="border p-3 mt4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Låna</h2>
+        </div>
+        @*<div class="mb-3">
+            <label asp-for="@Model.Customer.CustomerFirstName"></label>
+            <input asp-for="@Model.Customer.CustomerFirstName" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Customer.CustomerLastName"></label>
+            <input asp-for="@Model.Customer.CustomerLastName" class="form-control">
+        </div>*@
+        <div class="mb-3">
+            <label for="selectCustomer" class="form-label">Välj en låntagare</label>
+            <select asp-for="CustomerId" id="selectCustomer" class="form-control">
+                @await Component.InvokeAsync("CustomerOptions")
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="selectBook" class="form-label">Välj en bok</label>
+            <select asp-for="BookId" id="selectBook" class="form-control">
+                @await Component.InvokeAsync("BookOptions")
+                <span asp-validation-for="BookId" class="text-danger"></span>
+            </select>
+        </div>
+        @*<div class="mb-3">
+            <label asp-for="DateForLoan"></label>
+            <input type="datetime-local" class="form-control">
+        </div>*@
+        <button type="submit" class="btn btn-primary" style="width:150px">Skapa</button>
+        <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
+    </div>
+</form>
+
+

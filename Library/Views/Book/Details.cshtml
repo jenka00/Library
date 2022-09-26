@@ -1,0 +1,19 @@
+﻿@model Book
+
+<ul class="media-list">
+    <li class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="@Model.ImageUrl" alt="Bild av bokomslag" />
+            </a>
+        </div>
+        <div class="media-body pl-5">
+            <h4 class="media-heading">@Model.BookTitle</h4>
+            <div class="font-italic">
+                <p>Författare: @Model.Author
+            </div>
+            <p>@Model.BookSubscritpion</p>
+            <a asp-controller="Book" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
+        </div>
+    </li>
+</ul>

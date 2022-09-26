@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Customer>
+
+<div class="container p3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Låntagare</h2>
+        </div>
+        <div class="col-6">
+            <a asp-controller="Customer" asp-action="Create" class=" btn btn-success float-right">Skapa ny låntagare</a>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Namn
+                </th>
+                <th>
+                    Telefonnummer
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>
+                        <a class="text-center" asp-controller="Customer" asp-route-id=@customer.CustomerId asp-action="Details">@customer.CustomerFirstName @customer.CustomerLastName</a>
+                    </td>
+                    <td>
+                        <div class="text-left">@customer.PhoneNumber</div>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-controller="Customer" asp-action="Edit" asp-route-id="@customer.CustomerId">Uppdatera</a>
+                        <a class="btn btn-danger" asp-controller="Customer" asp-action="Remove" asp-route-id="@customer.CustomerId">Ta bort</a>
+                        <a class="btn btn-info" asp-controller="Customer" asp-action="Details" asp-route-id="@customer.CustomerId">Se lån</a>  
+                    </td>
+                </tr>
+             }
+        </tbody>
+    </table>
+</div>

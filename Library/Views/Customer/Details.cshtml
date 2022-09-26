@@ -1,0 +1,69 @@
+﻿@model Customer
+
+<div class="container p3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Lån</h2>
+        </div>
+        <div class="col-6">
+            <h3 class="text-secondary float-right">@Model.CustomerFirstName @Model.CustomerLastName</h3>
+        </div>
+    </div>
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Boktitel
+                    </th>
+                    <th>
+                        Författare
+                    </th>
+                    <th>
+                        Låndatum
+                    </th>
+                    <th>
+                        Är återlämnad
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var loan in Model.Loans)
+                {
+                    <tr>
+                        <td>
+                            <div class="text-left">@loan.Book.BookTitle</div>
+                        </td>
+                        <td>
+                            <div class="text-left">@loan.Book.Author</div>
+                        </td>
+                        <td>
+                            <time class="text-left">@loan.DateForLoan</time>
+                        </td>
+                        @if (loan.DateForReturn < DateTime.Now)
+                        {
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" disabled class="form-check-input" checked="checked">Återlämnad
+                                    </label>
+                                </div>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" disabled class="form-check-input">Återlämnad
+                                    </label>
+                                </div>
+                            </td>
+
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
+    </div>

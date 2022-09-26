@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Book>
+
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown">Låntagare<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        @foreach (var book in Model)
+        {
+        <option value="@book.BookId">@book.BookTitle</option>
+        }
+    </ul>
+</li>

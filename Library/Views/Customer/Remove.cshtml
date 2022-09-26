@@ -1,0 +1,23 @@
+﻿@model Customer
+<h1>Ta bort</h1>
+<form method="post" asp-action="RemoveCustomer" asp-route-id="@Model.CustomerId">
+    <div class="border p-3 mt4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Ta bort låntagare</h2>
+        </div>        
+        <div class="mb-3">
+            <label asp-for="CustomerFirstName"></label>
+            <input asp-for="CustomerFirstName" disabled class="form-control">           
+        </div>
+        <div class="mb-3">
+            <label asp-for="CustomerLastName"></label>
+            <input asp-for="CustomerLastName" disabled class="form-control">            
+        </div>
+        <div class="mb-3">
+            <label asp-for="PhoneNumber"></label>
+            <input asp-for="PhoneNumber" disabled class="form-control">            
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Ta bort</button>
+        <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
+    </div>
+</form>

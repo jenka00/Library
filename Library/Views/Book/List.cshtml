@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Book>
+
+<h2>Böcker</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Boktitel
+            </th>
+            <th>
+                Författare
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>
+                    <div class="text-left">@book.BookTitle</div>
+                </td>
+                <td>
+                    <div class="text-left">@book.Author</div>
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Book" asp-route-id="@book.BookId" asp-action="Details">Beskrivning</a>                     
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

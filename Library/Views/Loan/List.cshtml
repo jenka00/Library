@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Loan>
+
+<div class="container p3">
+    <div class="row pt-4">        
+        <h2 class="text-primary">Låntagare</h2>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Boktitel
+                </th>
+                <th>
+                    Författare
+                </th>>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var loan in Model)
+            {
+                <tr>
+                    <td>
+                        <a class="text-center" asp-controller="Book" asp-route-id=@loan.BookId asp-action="Details">@loan.Book.BookTitle</a>
+                    </td>
+                    <td>
+                        <div class="text-left">@loan.Book.Author</div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
