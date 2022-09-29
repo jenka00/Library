@@ -6,14 +6,17 @@
             <h2 class="text-primary">Böcker</h2>
         </div>
         </div>
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
+        <table class="table table-striped table-hover table-sm">
+            <thead class="thead-dark">
+                <tr>                    
                     <th>
                         Boktitel
                     </th>
-                    <th>
+                    <th >
                         Författare
+                    </th>
+                    <th>
+                        Beskrivning
                     </th>
                 </tr>
             </thead>
@@ -27,8 +30,8 @@
                         <td>
                             <div class="text-left">@book.Author</div>
                         </td>
-                        <td>
-                            <a class="btn btn-primary" asp-controller="Book" asp-route-id="@book.BookId" asp-action="Details"><i class="fa-solid fa-arrow-right"></i>&nbsp; Beskrivning</a>
+                        <td class="col-2">
+                            <a class="btn btn-primary" asp-controller="Book" asp-route-id="@book.BookId" asp-action="Details"><i class="fa-brands fa-readme"></i></a>
                         </td>
                     </tr>
                 }

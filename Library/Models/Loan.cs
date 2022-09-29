@@ -13,10 +13,12 @@ namespace Library.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        [Display(Name = "Lånedatum")]
         public DateTime DateForLoan { get; set; } 
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:yyyy-MM-dd}")]
+        [Display(Name = "Återlämningsdatum")]
         public DateTime? DateForReturn { get; set; }
 
         public int CustomerId { get; set; }

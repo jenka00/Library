@@ -3,30 +3,24 @@
     <div class="container p3">
         <div class="row pt-4">
             <div class="col-6">
-                <h2 class="text-primary">Skapa ny låntagare</h2>
+                <h2 class="text-primary">Information om låntagare</h2>
             </div>
         </div>
-        <form method="post" autocomplete="off">
+        <form method="post" asp-action="RemoveCustomer" asp-route-id="@Model.CustomerId">
             <div class="border p-3 mt4">
                 <div class="mb-3">
                     <label asp-for="CustomerFirstName" class="form-label font-weight-bold"></label>
-                    <input asp-for="CustomerFirstName" class="form-control">
-                    <span asp-validation-for="CustomerFirstName" class="text-danger"></span>
+                    <input asp-for="CustomerFirstName" disabled class="form-control">
                 </div>
                 <div class="mb-3">
                     <label asp-for="CustomerLastName" class="form-label font-weight-bold"></label>
-                    <input asp-for="CustomerLastName" class="form-control">
-                    <span asp-validation-for="CustomerLastName" class="text-danger"></span>
+                    <input asp-for="CustomerLastName" disabled class="form-control">
                 </div>
                 <div class="mb-3">
                     <label asp-for="PhoneNumber" class="form-label font-weight-bold"></label>
-                    <input asp-for="PhoneNumber" class="form-control">
-                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width:150px" onclick="return alert('Låntagaren har skapats.')">Skapa</button>
+                    <input asp-for="PhoneNumber" disabled class="form-control">
+                </div>                
                 <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
             </div>
         </form>
     </div>
-
-

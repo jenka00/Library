@@ -24,7 +24,7 @@
                 <input asp-for="PhoneNumber" class="form-control">
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary" style="width:150px">Uppdatera</button>
+            <button type="submit" class="btn btn-primary" style="width:150px" onclick="return alert('Låntagaren har uppdaterats.')">Uppdatera</button>
             <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
         </div>
     </form>

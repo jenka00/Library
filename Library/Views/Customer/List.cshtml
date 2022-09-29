@@ -10,14 +10,14 @@
         </div>
     </div>
 
-    <table class="table table-bordered table-hover">
-        <thead>
+    <table class="table table-striped table-hover table-sm">
+        <thead class="thead-dark">
             <tr>
                 <th>
                     Namn
                 </th>
                 <th>
-                    Telefonnummer
+
                 </th>
             </tr>
         </thead>
@@ -28,13 +28,15 @@
                     <td>
                         <div class="text-left">@customer.CustomerFirstName @customer.CustomerLastName</div>
                     </td>
-                    <td>
-                        <div class="text-left">@customer.PhoneNumber</div>
-                    </td>
-                    <td>
-                        <a class="btn btn-warning" asp-controller="Customer" asp-action="Edit" asp-route-id="@customer.CustomerId"><i class="fa-regular fa-pen-to-square"></i> Uppdatera</a>
-                        <a class="btn btn-danger" asp-controller="Customer" asp-action="Remove" asp-route-id="@customer.CustomerId"><i class="fa-solid fa-trash-can"></i> Ta bort</a>
-                        <a class="btn btn-info" asp-controller="Customer" asp-action="Details" asp-route-id="@customer.CustomerId"><i class="fa-solid fa-book"></i> Se lån</a>  
+                    <td class="float-right">
+                        <form>
+                            <div class="btn btn-group">
+                                <a class="btn btn-primary" asp-controller="Customer" asp-action="CustomerDetails" asp-route-id="@customer.CustomerId"><i class="fa-solid fa-user"></i> Information</a>
+                                <a class="btn btn-warning" asp-controller="Customer" asp-action="Edit" asp-route-id="@customer.CustomerId"><i class="fa-regular fa-pen-to-square"></i> Uppdatera</a>
+                                <a class="btn btn-danger" asp-controller="Customer" asp-action="Remove" asp-route-id="@customer.CustomerId"><i class="fa-solid fa-trash-can"></i> Ta bort</a>
+                                <a class="btn btn-info" asp-controller="Customer" asp-action="Details" asp-route-id="@customer.CustomerId"><i class="fa-solid fa-book"></i> Se lån</a>
+                            </div>
+                        </form>
                     </td>
                 </tr>
              }

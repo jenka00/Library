@@ -29,7 +29,16 @@ namespace Library.Controllers
             }
             return View(customerToView);
         }
-        
+        public IActionResult CustomerDetails(int id)
+        {
+            var customerToView = _customerRepository.GetSingle(id);
+            if (customerToView == null)
+            {
+                return NotFound();
+            }
+            return View(customerToView);
+        }
+
         //GET
         public IActionResult Create()
         {

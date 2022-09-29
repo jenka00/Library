@@ -3,7 +3,7 @@
 <div class="container p3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Uppdatera låntagare</h2>
+            <h2 class="text-primary">Återlämna bok</h2>
         </div>
     </div>
     <form method="post" asp-action="Edit" autocomplete="off">
@@ -20,7 +20,7 @@
                 <label asp-for="DateForLoan" class="form-label font-weight-bold"></label>
                 <input asp-for="DateForLoan" disabled class="form-control">                
             </div>
-            <button type="submit" class="btn btn-primary" style="width:150px">Avsluta lån</button>
+            <button type="submit" class="btn btn-primary" style="width:150px" onclick="return alert('Boken är återlämnad')">Avsluta lån</button>
             <a asp-controller="Customer" asp-action="List" class="btn btn-secondary" style="width:150px">Tillbaka</a>
         </div>
     </form>
